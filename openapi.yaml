@@ -1,0 +1,94 @@
+openapi: 3.0.4
+info:
+  title: Jobs Report
+  description: >-
+    Jobs Report provides monthly US employment data including unemployment rate,
+    total employment, labor force participation, and employment by industry
+    sector. The same data released in the monthly BLS jobs report.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/jobsreport:
+    get:
+      summary: Get Jobs Report
+      description: Get current or historical employment statistics
+      operationId: jobsreport
+      parameters:
+        - name: date
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            Optional date in YYYY-MM format for historical lookup. Omit for
+            current data.
+          example: 2024-01
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  yearMonth: 2024-01
+                  year: 2024
+                  month: 1
+                  summary:
+                    unemploymentRate: 3.7
+                    laborForceParticipation: 62.5
+                    totalEmployed: 161152000
+                    totalUnemployed: 6124000
+                    laborForce: 167276000
+                    jobsChange: 353000
+                  nonfarmPayrolls:
+                    total: 157245000
+                    private: 133567000
+                  bySector:
+                    mining: 645000
+                    construction: 8123000
+                    manufacturing: 12987000
+                    tradeTransportUtilities: 29456000
+                    information: 2987000
+                    financialActivities: 9234000
+                    professionalBusiness: 22876000
+                    educationHealth: 25678000
+                    leisureHospitality: 16789000
+                    otherServices: 5892000
+                    government: 23678000
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
