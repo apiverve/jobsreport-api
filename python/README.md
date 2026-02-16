@@ -243,8 +243,9 @@ from apiverve_jobsreport.apiClient import JobsreportAPIClient
 
 api = JobsreportAPIClient("[YOUR_API_KEY]")
 
+query = { "date": "2024-01" }
+
 try:
-    query = { "date": "2024-01" }
     result = api.execute(query)
     print(result)
 finally:
