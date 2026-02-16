@@ -1,0 +1,16 @@
+name: apiverve_jobsreport
+description: Jobs Report provides monthly US employment data including unemployment rate, total employment, labor force participation, and employment by industry sector. The same data released in the monthly BLS jobs report.
+version: 1.1.14
+homepage: https://apiverve.com/marketplace/jobsreport?utm_source=dart&utm_medium=homepage
+repository: https://github.com/apiverve/jobsreport-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
