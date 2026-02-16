@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/jobsreport",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Jobs Report provides monthly US employment data including unemployment rate, total employment, labor force participation, and employment by industry sector. The same data released in the monthly BLS jobs report.",
   "main": "index.js",
   "types": "index.d.ts",
