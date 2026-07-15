@@ -31,7 +31,7 @@ paths:
           description: >-
             Optional date in YYYY-MM format for historical lookup. Omit for
             current data.
-          example: 2024-01
+          example: 2023-06
       responses:
         '200':
           description: Successful Response
@@ -56,6 +56,7 @@ paths:
                   yearMonth: 2024-01
                   year: 2024
                   month: 1
+                  jobsChangeDirection: growth
                   summary:
                     unemploymentRate: 3.7
                     laborForceParticipation: 62.5
@@ -78,6 +79,13 @@ paths:
                     leisureHospitality: 16789000
                     otherServices: 5892000
                     government: 23678000
+                  topSector: Trade, Transport & Utilities
+                  formatted:
+                    totalEmployed: 161.15M
+                    totalUnemployed: 6.12M
+                    laborForce: 167.28M
+                    jobsChange: +353.0K
+                    nonfarmPayrolls: 157.25M
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
