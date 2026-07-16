@@ -25,6 +25,9 @@ namespace APIVerve.API.JobsReport
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,10 +36,13 @@ namespace APIVerve.API.JobsReport
         public string YearMonth { get; set; }
 
         [JsonProperty("year")]
-        public long Year { get; set; }
+        public long? Year { get; set; }
 
         [JsonProperty("month")]
-        public long Month { get; set; }
+        public long? Month { get; set; }
+
+        [JsonProperty("jobsChangeDirection")]
+        public string JobsChangeDirection { get; set; }
 
         [JsonProperty("summary")]
         public Summary Summary { get; set; }
@@ -46,71 +52,107 @@ namespace APIVerve.API.JobsReport
 
         [JsonProperty("bySector")]
         public BySector BySector { get; set; }
+
+        [JsonProperty("topSector")]
+        public string TopSector { get; set; }
+
+        [JsonProperty("formatted")]
+        public Formatted Formatted { get; set; }
     }
 
     public partial class BySector
     {
         [JsonProperty("mining")]
-        public long Mining { get; set; }
+        public long? Mining { get; set; }
 
         [JsonProperty("construction")]
-        public long Construction { get; set; }
+        public long? Construction { get; set; }
 
         [JsonProperty("manufacturing")]
-        public long Manufacturing { get; set; }
+        public long? Manufacturing { get; set; }
 
         [JsonProperty("tradeTransportUtilities")]
-        public long TradeTransportUtilities { get; set; }
+        public long? TradeTransportUtilities { get; set; }
 
         [JsonProperty("information")]
-        public long Information { get; set; }
+        public long? Information { get; set; }
 
         [JsonProperty("financialActivities")]
-        public long FinancialActivities { get; set; }
+        public long? FinancialActivities { get; set; }
 
         [JsonProperty("professionalBusiness")]
-        public long ProfessionalBusiness { get; set; }
+        public long? ProfessionalBusiness { get; set; }
 
         [JsonProperty("educationHealth")]
-        public long EducationHealth { get; set; }
+        public long? EducationHealth { get; set; }
 
         [JsonProperty("leisureHospitality")]
-        public long LeisureHospitality { get; set; }
+        public long? LeisureHospitality { get; set; }
 
         [JsonProperty("otherServices")]
-        public long OtherServices { get; set; }
+        public long? OtherServices { get; set; }
 
         [JsonProperty("government")]
-        public long Government { get; set; }
+        public long? Government { get; set; }
+    }
+
+    public partial class Formatted
+    {
+        [JsonProperty("totalEmployed")]
+        public string TotalEmployed { get; set; }
+
+        [JsonProperty("totalUnemployed")]
+        public string TotalUnemployed { get; set; }
+
+        [JsonProperty("laborForce")]
+        public string LaborForce { get; set; }
+
+        [JsonProperty("jobsChange")]
+        public string JobsChange { get; set; }
+
+        [JsonProperty("nonfarmPayrolls")]
+        public string NonfarmPayrolls { get; set; }
     }
 
     public partial class NonfarmPayrolls
     {
         [JsonProperty("total")]
-        public long Total { get; set; }
+        public long? Total { get; set; }
 
         [JsonProperty("private")]
-        public long Private { get; set; }
+        public long? Private { get; set; }
     }
 
     public partial class Summary
     {
         [JsonProperty("unemploymentRate")]
-        public double UnemploymentRate { get; set; }
+        public double? UnemploymentRate { get; set; }
 
         [JsonProperty("laborForceParticipation")]
-        public double LaborForceParticipation { get; set; }
+        public double? LaborForceParticipation { get; set; }
 
         [JsonProperty("totalEmployed")]
-        public long TotalEmployed { get; set; }
+        public long? TotalEmployed { get; set; }
 
         [JsonProperty("totalUnemployed")]
-        public long TotalUnemployed { get; set; }
+        public long? TotalUnemployed { get; set; }
 
         [JsonProperty("laborForce")]
-        public long LaborForce { get; set; }
+        public long? LaborForce { get; set; }
 
         [JsonProperty("jobsChange")]
-        public long JobsChange { get; set; }
+        public long? JobsChange { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
