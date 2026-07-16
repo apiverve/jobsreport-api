@@ -187,11 +187,64 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Jobs Report API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "yearMonth": "2024-01",
+    "year": 2024,
+    "month": 1,
+    "jobsChangeDirection": "growth",
+    "summary": {
+      "unemploymentRate": 3.7,
+      "laborForceParticipation": 62.5,
+      "totalEmployed": 161152000,
+      "totalUnemployed": 6124000,
+      "laborForce": 167276000,
+      "jobsChange": 353000
+    },
+    "nonfarmPayrolls": {
+      "total": 157245000,
+      "private": 133567000
+    },
+    "bySector": {
+      "mining": 645000,
+      "construction": 8123000,
+      "manufacturing": 12987000,
+      "tradeTransportUtilities": 29456000,
+      "information": 2987000,
+      "financialActivities": 9234000,
+      "professionalBusiness": 22876000,
+      "educationHealth": 25678000,
+      "leisureHospitality": 16789000,
+      "otherServices": 5892000,
+      "government": 23678000
+    },
+    "topSector": "Trade, Transport & Utilities",
+    "formatted": {
+      "totalEmployed": "161.15M",
+      "totalUnemployed": "6.12M",
+      "laborForce": "167.28M",
+      "jobsChange": "+353.0K",
+      "nonfarmPayrolls": "157.25M"
+    }
+  }
 }
 ```
 
