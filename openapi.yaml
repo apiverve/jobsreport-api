@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/jobsreport:
     get:
-      summary: Get Jobs Report
+      summary: Jobs Report
       description: Get current or historical employment statistics
       operationId: jobsreport
       parameters:
