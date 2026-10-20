@@ -3,11 +3,10 @@ Jobs Report API
 
 Jobs Report provides monthly US employment data including unemployment rate, total employment, labor force participation, and employment by industry sector. The same data released in the monthly BLS jobs report.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Jobs Report API](https://apiverve.com/marketplace/jobsreport?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-jobsreport.svg)](https://pypi.org/project/apiverve-jobsreport/)
+
+This is a Python wrapper for the [Jobs Report API](https://apiverve.com/marketplace/jobsreport?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-jobsreport
 
 ## Configuration
 
-Before using the jobsreport API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Jobs Report API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -44,7 +43,7 @@ from apiverve_jobsreport.apiClient import JobsreportAPIClient
 # Initialize the client with your APIVerve API key
 api = JobsreportAPIClient("[YOUR_API_KEY]")
 
-query = { "date": "2024-01" }
+query = { "date": "2023-06" }
 
 try:
     # Make the API call
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Jobs Report API documentation is found here: [https://docs.apiverve.com/ref/jobsreport](https://docs.apiverve.com/ref/jobsreport?utm_source=pypi&utm_medium=readme).
+The Jobs Report API documentation is found here: [https://docs.apiverve.com/ref/jobsreport](https://docs.apiverve.com/ref/jobsreport?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -82,7 +81,7 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "date": "2024-01" }
+query = { "date": "2023-06" }
 ```
 
 ###### Simple Request
@@ -105,6 +104,7 @@ print(result)
     "yearMonth": "2024-01",
     "year": 2024,
     "month": 1,
+    "jobsChangeDirection": "growth",
     "summary": {
       "unemploymentRate": 3.7,
       "laborForceParticipation": 62.5,
@@ -129,6 +129,14 @@ print(result)
       "leisureHospitality": 16789000,
       "otherServices": 5892000,
       "government": 23678000
+    },
+    "topSector": "Trade, Transport & Utilities",
+    "formatted": {
+      "totalEmployed": "161.15M",
+      "totalUnemployed": "6.12M",
+      "laborForce": "167.28M",
+      "jobsChange": "+353.0K",
+      "nonfarmPayrolls": "157.25M"
     }
   }
 }
@@ -147,7 +155,7 @@ from apiverve_jobsreport.apiClient import JobsreportAPIClient, JobsreportAPIClie
 
 api = JobsreportAPIClient("[YOUR_API_KEY]")
 
-query = { "date": "2024-01" }
+query = { "date": "2023-06" }
 
 try:
     result = api.execute(query)
@@ -168,7 +176,7 @@ from apiverve_jobsreport.apiClient import JobsreportAPIClient, JobsreportAPIClie
 
 api = JobsreportAPIClient("[YOUR_API_KEY]")
 
-query = { "date": "2024-01" }
+query = { "date": "2023-06" }
 
 try:
     result = api.execute(query)
@@ -202,7 +210,7 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_jobsreport.apiClient import JobsreportAPIClient, JobsreportAPIClientError
 
-query = { "date": "2024-01" }
+query = { "date": "2023-06" }
 
 # Using context manager ensures proper cleanup
 with JobsreportAPIClient("[YOUR_API_KEY]") as api:
@@ -228,7 +236,7 @@ from apiverve_jobsreport.apiClient import JobsreportAPIClient
 # Enable debug mode
 api = JobsreportAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "date": "2024-01" }
+query = { "date": "2023-06" }
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -243,7 +251,7 @@ from apiverve_jobsreport.apiClient import JobsreportAPIClient
 
 api = JobsreportAPIClient("[YOUR_API_KEY]")
 
-query = { "date": "2024-01" }
+query = { "date": "2023-06" }
 
 try:
     result = api.execute(query)
@@ -257,7 +265,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -268,12 +276,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
