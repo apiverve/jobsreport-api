@@ -5,7 +5,7 @@ Jobs Report provides monthly US employment data including unemployment rate, tot
 [![pub package](https://img.shields.io/pub/v/apiverve_jobsreport.svg)](https://pub.dev/packages/apiverve_jobsreport)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [Jobs Report API](https://apiverve.com/marketplace/jobsreport?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [Jobs Report API](https://apiverve.com/marketplace/jobsreport?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_jobsreport: ^1.1.14
+  apiverve_jobsreport: ^1.2.4
 ```
 
 Then run:
@@ -34,7 +34,7 @@ void main() async {
 
   try {
     final response = await client.execute({
-      'date': '2024-01'
+      'date': '2023-06'
     });
 
     print('Status: ${response.status}');
@@ -55,6 +55,7 @@ void main() async {
     "yearMonth": "2024-01",
     "year": 2024,
     "month": 1,
+    "jobsChangeDirection": "growth",
     "summary": {
       "unemploymentRate": 3.7,
       "laborForceParticipation": 62.5,
@@ -79,6 +80,14 @@ void main() async {
       "leisureHospitality": 16789000,
       "otherServices": 5892000,
       "government": 23678000
+    },
+    "topSector": "Trade, Transport & Utilities",
+    "formatted": {
+      "totalEmployed": "161.15M",
+      "totalUnemployed": "6.12M",
+      "laborForce": "167.28M",
+      "jobsChange": "+353.0K",
+      "nonfarmPayrolls": "157.25M"
     }
   }
 }
@@ -86,12 +95,12 @@ void main() async {
 
 ## API Reference
 
-- **API Home:** [Jobs Report API](https://apiverve.com/marketplace/jobsreport?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/jobsreport](https://docs.apiverve.com/ref/jobsreport?utm_source=dart&utm_medium=readme)
+- **API Home:** [Jobs Report API](https://apiverve.com/marketplace/jobsreport?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/jobsreport](https://docs.apiverve.com/ref/jobsreport?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -99,4 +108,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)

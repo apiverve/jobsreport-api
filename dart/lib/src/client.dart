@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Jobs Report API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/jobsreport?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/jobsreport?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [date] - Optional date in YYYY-MM format for historical lookup. Omit for current data. [format: date]
